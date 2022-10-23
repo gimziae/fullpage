@@ -1,3 +1,4 @@
+/* common */
 *{
     margin: 0;
     padding: 0;
@@ -14,6 +15,10 @@ ul,ol,li{
 body{
     overflow: hidden;
 }
+
+/* font */
+/* font-family: 'Lato', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 /* HEADER ------------------------------*/
 #header{
@@ -68,6 +73,13 @@ body{
 /* submenu */
 #header .sub_menu{
     position: absolute;
+    right: 2rem;
+    display: none;
+}
+
+#header .sub_menu a i{
+    color: white;
+    font-size: 1.3rem;
 }
 
 
@@ -92,27 +104,77 @@ body{
     top: 30%;
     left: 6vw;
     margin-top: 100px;
-    border: 1px solid red;
 }
 
 #main .inner .txt p{
     font-size: 4vw;
+    font-family: 'Lato', sans-serif;
 }
 #main .inner .txt ul{
     display: flex;
 }
 #main .inner .txt ul li{
     font-size: 18px;
-    margin-right: 10px;
+    margin-right: 15px;
+}
+#main .inner .txt ul li a{
+    color: rgba(255, 255, 255, 0.5);
+    transition: .5s;
+}
+#main .inner .txt ul li a:hover{
+    color: rgba(255, 255, 255, .8);
+}
+
+#main .inner .txt ul li a strong{
+    font-size: 16px;
+    margin-left: 5px;
+    text-transform: lowercase;
 }
 
 /* FOOTER -------------------------------*/
 #footer{
     width: 100%;
     position: absolute;
-    bottom: .5rem;
+    bottom: .8rem;
     color: rgba(255, 255, 255, 0.728);
     font: 14px/1 'arial';
     text-align: center;
 }
 
+@media screen and (max-width:768px){
+    #header{
+        height: 80px;
+    }
+    #header h1{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        letter-spacing: 1px;
+        font-size: 1.8rem;
+    }
+    #header .sub_menu{
+        display: block;
+    }
+
+    #header .menu, #header .sns{
+        display: none;
+    }
+
+    #main .inner .txt p{
+        font-size: 5vw;
+    }
+
+    #main .inner .txt ul{
+        display: block;
+    }
+    #main .inner .txt ul li{
+        font-size: 18px;
+        margin-right: 15px;
+    }
+
+    
+    #main .inner .txt ul li a strong{
+        font-size: 14px;
+        margin-left: 5px;
+    }
+}
